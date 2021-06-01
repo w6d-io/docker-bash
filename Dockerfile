@@ -11,5 +11,5 @@ LABEL maintainer="${USER_NAME} <${USER_EMAIL}>" \
         org.label-schema.version=$VERSION
 
 ENV DESIRED_VERSION $DESIRED_VERSION
+RUN echo y | apk update
 RUN echo y | apk add --no-cache curl git
-COPY scripts/* /usr/local/bin/
