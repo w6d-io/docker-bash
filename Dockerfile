@@ -14,7 +14,7 @@ ENV DESIRED_VERSION $DESIRED_VERSION
 RUN apt update
 RUN apt -y install git && git --version
 RUN apt -y install curl
-RUN wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+RUN wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | tar -xz -C /usr/local
 RUN export PATH=$PATH:/usr/local/go/bin
 RUN source ~/.profile
 RUN go version
