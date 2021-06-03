@@ -18,5 +18,6 @@ RUN apt -y install wget
 RUN apt -y install tar
 RUN wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | tar -xz -C /usr/local
 RUN export PATH=$PATH:/usr/local/go/bin
-RUN . ~/.profile
+RUN export PATH=$PATH:/usr/local/go/bin
+RUN bin/bash/ "source ~/.profile"
 RUN go version
