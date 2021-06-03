@@ -24,4 +24,4 @@ ENV PATH="${PATH}:/usr/local/go/bin"
 RUN echo $PATH
 RUN ls -la ~/
 RUN /bin/bash -c "source ~/.profile"
-RUN /bin/bash -c "go version"
+RUN go version
