@@ -5,4 +5,3 @@ This project is for build an image with :
 - wget
 - git
 - golang
-
