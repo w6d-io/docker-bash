@@ -20,7 +20,7 @@ RUN wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | tar -xz 
 RUN ls /usr/local
 RUN ls /usr/local/go
 RUN echo $PATH
-RUN export PATH=$PATH:/usr/local/go/bin
+ENV PATH=${PATH}:/usr/local/go/bin
 RUN echo $PATH
 RUN ls -la ~/
 RUN /bin/bash -c "source ~/.profile"
