@@ -4,4 +4,4 @@ This project is for build an image with :
 - curl
 - wget
 - git
-- golang
+- golang example usage: /bin/bash -c  "go version"
