@@ -11,6 +11,7 @@ LABEL maintainer="${USER_NAME} <${USER_EMAIL}>" \
         org.label-schema.version=$VERSION
 
 ENV DESIRED_VERSION $DESIRED_VERSION
+
 RUN apt update
 RUN apt -y install git && git --version
 RUN apt -y install curl
