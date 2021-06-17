@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM python:3.8.10-alpine3.13
 ARG VCS_REF
 ARG BUILD_DATE
 ARG VERSION
@@ -17,13 +17,10 @@ RUN apt -y install git && git --version
 RUN apt -y install curl
 RUN apt -y install wget
 RUN apt -y install tar
-RUN apt -y install mercurial
-RUN wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | tar -xz -C /usr/local
-RUN ls /usr/local
-RUN ls /usr/local/go
-RUN echo $PATH
-ENV PATH="${PATH}:/usr/local/go/bin"
+RUN python3 -m ensurepip
+RUN python3 -m pip
+RUN pip3 install --no-cache --upgrade pip setuptools
 RUN echo $PATH
 RUN ls -la ~/
-RUN /bin/bash -c "source ~/.profile"
-RUN go version
+# run the entrypoint (only when the image is instantiated into a container)
+ENTRYPOINT ["/bin/bash", "-c", "codecov"]
