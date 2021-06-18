@@ -17,6 +17,9 @@ RUN apt -y install git && git --version
 RUN apt -y install curl
 RUN apt -y install wget
 RUN apt -y install tar
+RUN apt -y install nodejs 
+RUN apt -y install npm
+RUN apt -y install build-essential
 RUN python3 -m ensurepip
 RUN python3 -m pip
 RUN pip3 install --no-cache --upgrade pip setuptools
