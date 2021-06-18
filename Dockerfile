@@ -17,8 +17,7 @@ RUN apk add vim wget curl git build-base
 RUN apk add bash gawk sed grep bc coreutils
 RUN apk add --update nodejs nodejs-npm
 RUN apk add --update npm
-RUN python3 -m ensurepip
-RUN python3 -m pip
+RUN apk add py3-pip
 RUN pip3 install --no-cache --upgrade pip setuptools
 # run the entrypoint (only when the image is instantiated into a container)
 ENTRYPOINT ["/bin/bash", "-c"]
