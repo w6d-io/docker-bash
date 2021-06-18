@@ -4,5 +4,13 @@ This project is for build an image with :
 - curl
 - wget
 - git
-- golang example usage: </bin/bash -c  "go version"> 
-  or directly: <go version>
+- make
+- pip
+- gawk 
+- sed 
+- grep 
+- bc 
+- coreutils
+- py3
+- nodejs
+- npm
