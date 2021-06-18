@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM alpine:3.13
 ARG VCS_REF
 ARG BUILD_DATE
 ARG VERSION
@@ -12,18 +12,13 @@ LABEL maintainer="${USER_NAME} <${USER_EMAIL}>" \
 
 ENV DESIRED_VERSION $DESIRED_VERSION
 
-RUN apt update
-RUN apt -y install git && git --version
-RUN apt -y install curl
-RUN apt -y install wget
-RUN apt -y install tar
-RUN apt -y install nodejs 
-RUN apt -y install npm
-RUN apt -y install build-essential
+RUN apk update
+RUN apk add vim wget curl git build-base
+RUN apk add bash gawk sed grep bc coreutils
+RUN apk add --update nodejs nodejs-npm
+RUN apk add --update npm
 RUN python3 -m ensurepip
 RUN python3 -m pip
 RUN pip3 install --no-cache --upgrade pip setuptools
-RUN echo $PATH
-RUN ls -la ~/
 # run the entrypoint (only when the image is instantiated into a container)
 ENTRYPOINT ["/bin/bash", "-c"]
