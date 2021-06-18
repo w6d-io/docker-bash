@@ -1,5 +1,5 @@
 
-IMG ?= w6dio/docker-codecov:latest
+IMG ?= w6dio/docker-bash:latest
 
 
 REF=$(shell git symbolic-ref --quiet HEAD 2> /dev/null)
