@@ -1,4 +1,4 @@
-FROM python:3.8.10-alpine3.13
+FROM ubuntu
 ARG VCS_REF
 ARG BUILD_DATE
 ARG VERSION
@@ -26,4 +26,4 @@ RUN pip3 install --no-cache --upgrade pip setuptools
 RUN echo $PATH
 RUN ls -la ~/
 # run the entrypoint (only when the image is instantiated into a container)
-ENTRYPOINT ["/bin/bash", "-c", "codecov"]
+ENTRYPOINT ["/bin/bash", "-c"]
